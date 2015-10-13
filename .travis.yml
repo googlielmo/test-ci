@@ -7,7 +7,7 @@ services:
 
 before_install:
 - docker pull clockercentral/clocker
-- docker run -d -v ~/.brooklyn:/root/.brooklyn -v ~/.ssh:/root/.ssh -P clockercentral/clocker
+#- docker run -d -v ~/.brooklyn:/root/.brooklyn -v ~/.ssh:/root/.ssh -P clockercentral/clocker
 
 script:
 - ls -al
