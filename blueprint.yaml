@@ -1,0 +1,5 @@
+name: My Blueprint
+location: loc1
+services:
+- type: org.apache.brooklyn.entity.software.base.EmptySoftwareProcess
+- type: org.apache.brooklyn.entity.webapp.tomcat.TomcatServer
