@@ -8,8 +8,11 @@ services:
 before_install:
 - docker pull clockercentral/clocker
 - sudo service docker restart ; sleep 10
+- chmod 600 brooklyn.properties
 - docker run -d --name=host1 rastasheep/ubuntu-sshd:14.04
-- docker run -d --link host1 -p 8081:18081 --entrypoint bin/clocker.sh clockercentral/clocker localhost
+- docker run -d --name=host2 rastasheep/ubuntu-sshd:14.04
+- docker run -d --link host1 --link host2 -p 8081:8081 -v `pwd`/brooklyn.properties:/root/.brooklyn/brooklyn.properties --entrypoint bin/clocker.sh clockercentral/clocker loc1
 
 script:
 - ls -al
+- sleep 10
