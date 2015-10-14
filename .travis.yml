@@ -8,8 +8,8 @@ services:
 before_install:
 - docker pull clockercentral/clocker
 - sudo service docker restart ; sleep 10
-- docker run -d -P clockercentral/clocker localhost
-#- docker run -d -v ~/.brooklyn:/root/.brooklyn -v ~/.ssh:/root/.ssh -P clockercentral/clocker
+- docker run -d --name=host1 rastasheep/ubuntu-sshd:14.04
+- docker run -d --link host1 -p 8081:18081 --entrypoint bin/clocker.sh clockercentral/clocker localhost
 
 script:
 - ls -al
