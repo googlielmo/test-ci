@@ -11,7 +11,8 @@ before_install:
 - chmod 600 brooklyn.properties
 - docker run -d --name=host1 rastasheep/ubuntu-sshd:14.04
 - docker run -d --name=host2 rastasheep/ubuntu-sshd:14.04
-- docker run -d --name=brooklyn --link host1 --link host2 -p 8081:8081 -v `pwd`/brooklyn.properties:/root/.brooklyn/brooklyn.properties --entrypoint bin/clocker.sh clockercentral/clocker loc1
+- docker run -d --name=host3 rastasheep/ubuntu-sshd:14.04
+- docker run -d --name=brooklyn --link host1 --link host2 --link host3 -p 8081:8081 -v `pwd`/brooklyn.properties:/root/.brooklyn/brooklyn.properties --entrypoint bin/clocker.sh clockercentral/clocker loc1
 - docker ps -a
 - docker inspect brooklyn
 - ps auxw
