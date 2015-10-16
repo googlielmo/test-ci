@@ -16,10 +16,14 @@ before_install:
 - docker inspect brooklyn
 - ps auxw
 - /sbin/ifconfig
+- /sbin/netstat -an
 
 install:
-- travis_wait mvn install -DskipTests=true
+- travis_wait mvn install -DskipTests=true -X
 
 script:
 - echo OK
 
+cache:
+  directories:
+  - $HOME/.m2

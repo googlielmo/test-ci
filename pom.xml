@@ -14,6 +14,7 @@
 	<buser>admin</buser>
 	<bpassword>admin</bpassword>
         <timeout>20</timeout>
+	<pollPeriod>30</pollPeriod>
     </properties>
 
     <pluginRepositories>
@@ -47,6 +48,7 @@
                         <configuration>
                             <server>${server}</server>
                             <timeout>${timeout}</timeout>
+                            <pollPeriod>${pollPeriod}</pollPeriod>
                             <username>${buser}</username>
                             <password>${bpassword}</password>
                             <blueprint>${project.basedir}/blueprint.yaml</blueprint>
