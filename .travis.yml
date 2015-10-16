@@ -16,10 +16,10 @@ before_install:
 - docker inspect brooklyn
 - ps auxw
 - /sbin/ifconfig
-- which netstat || echo no netstat
+- netstat -an
 
 install:
-- travis_wait mvn install -DskipTests=true -X
+- mvn install -DskipTests=true -X
 
 script:
 - echo OK
