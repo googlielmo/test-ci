@@ -13,7 +13,7 @@
         <server>http://127.0.0.1:8081</server>
 	<buser>admin</buser>
 	<bpassword>admin</bpassword>
-        <timeout>20</timeout>
+        <timeout>50</timeout>
 	<pollPeriod>30</pollPeriod>
     </properties>
 
