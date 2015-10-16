@@ -16,7 +16,7 @@ before_install:
 - docker inspect brooklyn
 - ps auxw
 - /sbin/ifconfig
-- /sbin/netstat -an
+- which netstat || echo no netstat
 
 install:
 - travis_wait mvn install -DskipTests=true -X
