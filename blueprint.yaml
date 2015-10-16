@@ -18,4 +18,4 @@ services:
   id: db
   name: My DB
   brooklyn.config:
-    creationScriptUrl: http://s3-eu-west-1.amazonaws.com/cloudsoft-amp/visitors-creation-script.sql
+    creationScriptUrl: https://s3-eu-west-1.amazonaws.com/cloudsoft-amp/visitors-creation-script.sql
